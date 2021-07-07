@@ -1,0 +1,1 @@
+rewrite ^/contact https://antoinekociuba-test060721-gwm7q.artifakt.dev/sales/guest/form/ permanent;
