@@ -3,7 +3,7 @@
 currentPath=$(pwd)
 tailPath="${currentPath#/*/*/*/}"
 headPath="${currentPath%/$tailPath}"
-headPathEscaped=$headPath.gsub("/", "\\/")
+headPathEscaped=echo $headPath | sed 's/\//\\\//g'
 
 echo $currentPath;
 echo $tailPath;
