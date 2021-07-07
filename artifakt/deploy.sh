@@ -5,13 +5,6 @@ tailPath="${currentPath#/*/*/*/}"
 headPath="${currentPath%/$tailPath}"
 headPathEscaped=$(echo $headPath | sed 's/\//\\\//g')
 
-echo $currentPath;
-echo $tailPath;
-echo $headPath;
-echo $headPathEscaped;
-
-env
-
 # Custom NGINX rewrites file
 if [[ -z $(grep "include $headPath/current/artifakt/nginx_rewrites.rewrites" "/etc/nginx/sites-available/magento") ]]; then
     if [[ -f "$currentPath/artifakt/nginx_rewrites.rewrites" ]]; then
